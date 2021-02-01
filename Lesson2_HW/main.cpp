@@ -2,46 +2,42 @@
 //  main.cpp
 //  Lesson2_HW
 //
-//  Created by admin on 30.01.2021.
-//TODO:
-//Split a five-digit number into separate digits
+//  Created by admin on 01.02.2021.
+//
 
 #include <iostream>
 using namespace std;
 
-
 int main(int argc, const char * argv[]) {
 
-    int maxNum = 0, minNum = 9, num = 0, separateNum = 0;
-    
+    int num, separateNum, numLength;
+
+    numLength = 5;
+
     cout << "Enter your number:" << endl;
     cin >> num;
-    
-    if (num > 0){
-        while (num)
-        {
-            separateNum = num % 10;
-            maxNum = maxNum > separateNum ? maxNum : separateNum;
-            minNum = minNum < separateNum ? minNum : separateNum;
-            cout << separateNum << " ";
-            num /= 10;
-        }
+
+    num = num > 0 ? num : -num;
+
+    while (num){
+        separateNum = num % 10;
+        num /=10;
+        cout << separateNum << " ";
     }
-    else
-    {
-        num = -num;
-        while (num)
-        {
-            separateNum = num % 10;
-            maxNum = maxNum > separateNum ? maxNum : separateNum;
-            cout << separateNum << " ";
-            num /= 10;
-        }
-        minNum = -separateNum;
+    cout << endl;
+
+    cout << "Enter number again(2-nd variant):"<< endl;
+    cin >> num;
+    cout << "Enter this number length:"<< endl;
+    cin >> numLength;
+
+    num = num > 0 ? num : -num;
+    
+    for (int i = (numLength - 1); i >= 0; --i){
+        separateNum = num / pow(10, i);
+        num = num - separateNum * pow(10, i);
+        cout << separateNum << " ";
     }
-    cout << "\nOur min number is:" << minNum << endl;
-    cout << "Our max number is:" << maxNum << endl;
-    
-    
+    cout << endl;
     return 0;
 }
