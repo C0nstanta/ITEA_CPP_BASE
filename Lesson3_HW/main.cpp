@@ -13,7 +13,7 @@ using namespace std;
 int main(int argc, const char * argv[]) {
 
     int arr[] ={};
-    int num, minNumber, maxNumber;
+    int num, minNumber, maxNumber, diff = 0;
     minNumber = 2147483647;
     maxNumber = -2147483647;
     
@@ -24,8 +24,12 @@ int main(int argc, const char * argv[]) {
         maxNumber = maxNumber > num ? maxNumber : num;
         minNumber = minNumber < num ? minNumber : num;
     }
+    
+    diff = abs(maxNumber - minNumber);
+    
     cout << "The max number is: " << maxNumber << endl;
     cout << "The min number is: " << minNumber << endl;
+    cout << "The difference between them: " << diff << endl;
 
     return 0;
 }
