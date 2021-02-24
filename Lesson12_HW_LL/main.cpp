@@ -12,11 +12,6 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-
-    Node *head = new Node(10);
-    cout << head->value << endl;
-    cout << head->ptr << endl;
-
         
     LinkedList *list = new LinkedList(5);
     list->pushFront(10, list);
