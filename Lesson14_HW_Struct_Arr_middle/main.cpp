@@ -1,10 +1,10 @@
-    //Create an Array structure based on a regular array
-
+//Create an Array structure based on a regular array
+//In this program, we create a dynamic array and can fill it in 2 directions.
+//If the array is completely full, it automatically expands.
 #include <iostream>
-#include <vector>
-
 
 using namespace std;
+
 
 template<typename T>
 struct Array
@@ -47,7 +47,6 @@ private:
                 tptrArr[r_side_size + i] = *(++ptrHeadArr);
             }
 
-            
                 delete[] ptrArr;
                 ptrArr = tptrArr;
                 ptrHeadArr = &ptrArr[l_side_size];
@@ -138,7 +137,6 @@ public:
         l_count = 0;
         r_count = 0;
         
-
     }
     
     void print_arr()
@@ -150,7 +148,8 @@ public:
         else
         {
             int j = 0;
-            for (int i = l_side_size - l_count + 1; i < r_side_size + r_count; i++)
+            for (int i = l_side_size - l_count + 1; i < r_side_size + r_count;
+                 i++)
             {
                 
                 cout << "Arr cell# " << j++ << " : " << ptrArr[i] << endl;
@@ -162,9 +161,6 @@ public:
     {
         return 4 * count_cell;
     }
-    
-
-    
 
 };
     
