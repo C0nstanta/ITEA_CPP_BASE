@@ -1,0 +1,4 @@
+"XOR" redirects here. For the logic gate, see XOR gate. For other uses, see XOR (disambiguation).
+It gains the name "exclusive or" because the meaning of "or" is ambiguous when both operands are true; the exclusive or operator excludes that case. This is sometimes thought of as "one or the other but not both". This could be written as "A or B, but not, A and B".
+
+Since it is associative, it may be considered to be an n-ary operator which is true if and only if an odd number of arguments are true. That is, a XOR b XOR ... may be treated as XOR(a,b,...).
